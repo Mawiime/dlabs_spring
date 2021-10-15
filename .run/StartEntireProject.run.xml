@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="StartEntireProject" type="CompoundRunConfigurationType">
+    <toRun name="LaunchFrontOn3000" type="js.build_tools.npm" />
+    <toRun name="TpDlabsApplication" type="SpringBootApplicationConfigurationType" />
+    <method v="2" />
+  </configuration>
+</component>
