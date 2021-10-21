@@ -40,7 +40,6 @@ export default {
   created(){
     axios.get("http://localhost:8080/deals/" + this.$route.params.id).then(response => {
       this.dealInfo = response.data;
-      console.log(this.dealInfo)
     });
   }
 }
@@ -50,10 +49,9 @@ export default {
 <style scoped>
 .deal{
   margin-left : 400px;
-  margin-top : 50px;
+  margin-top : 60px;
 }
 .card{
-  cursor: pointer;
   box-shadow: 5px 5px 8px dimgrey;
 }
 </style>

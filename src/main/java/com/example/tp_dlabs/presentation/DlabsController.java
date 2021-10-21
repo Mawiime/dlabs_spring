@@ -5,6 +5,7 @@ import com.example.tp_dlabs.business.DealDTO;
 import com.example.tp_dlabs.business.HomeDTO;
 import com.example.tp_dlabs.persistence.DealDO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class DlabsController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
+    @Transactional
     public void create(@RequestBody DealDO dealDO){
         dealBO.createOne(dealDO);
     }
