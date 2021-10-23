@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @CrossOrigin(origins="http://localhost:3000")
 @RequestMapping(value = "/deals")
@@ -19,10 +17,10 @@ public class DlabsController {
     private DealBO dealBO;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<DealDTO> getAll(){
+    public HomeDTO getAll(){
         final HomeDTO homeDTO = new HomeDTO(dealBO.retrieveAll());
 
-        return homeDTO.getDeals();
+        return homeDTO;
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)

@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-md-3">
-           <p class="card-text"> {{deal.dateCreation}} </p>
+           <p class="card-text"> {{deal.date}} </p>
            <div class="card-text"> <a target="_blank" class="btn btn-dark" :href="deal.shopLink"> Voir </a></div>
         </div>
 
@@ -41,7 +41,7 @@ export default {
   },
   created(){
     axios.get("http://localhost:8080/deals").then(response => {
-      this.listDeals = response.data;
+      this.listDeals = response.data.deals;
     });
   }
 }

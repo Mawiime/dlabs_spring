@@ -6,6 +6,10 @@
       </div>
 
       <form class="form-inline">
+        <div v-if="this.formError">
+          Tous les champs doivent être remplis
+        </div>
+
         <div class="form-group"><input class="form-control" placeholder="Titre du deal" v-model="form.title"></div>
         <div class="form-group"><input class="form-control" placeholder="Description" v-model="form.description"></div>
         <div class="form-group"><input class="form-control" placeholder="Prix original" v-model="form.priceOld"></div>
@@ -14,6 +18,7 @@
         <div class="form-group"><input class="form-control" placeholder="Lien vers l'enseigne" v-model="form.shopLink"></div>
         <div class="form-group"><input class="form-control" placeholder="Code promo" v-model="form.promoCode"></div>
         <div class="form-group"><input class="form-control" placeholder="Lien vers image" v-model="form.imgUrl"></div>
+
         <div class="form-group"><button class="btn btn-primary" v-on:click="sendDeal()">Créer le deal</button></div>
       </form>
     </div>
@@ -27,15 +32,16 @@ export default {
   name: "PostDealComponent",
   data(){
     return{
+      formError : false,
       form : {
-        title : '',
-        description : '',
-        priceOld : '',
-        priceNew : '',
-        shopName : '',
-        shopLink : '',
-        promoCode : '',
-        imgUrl : '',
+        title : null,
+        description : null,
+        priceOld : null,
+        priceNew : null,
+        shopName : null,
+        shopLink : null,
+        promoCode : null,
+        imgUrl : null,
         temperature : '0',
         creator : 'temp_creator',
         date : new Date()
@@ -44,12 +50,18 @@ export default {
   },
   methods : {
     sendDeal(){
-      axios.post("http://localhost:8080/deals", this.form).then((res) => {
-        console.log(res)
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+      if(this.form.title && this.form.description && this.form.priceOld && this.form.priceNew && this.form.shopName && this.form.shopLink && this.form.promoCode && this.form.imgUrl){
+        axios.post("http://localhost:8080/deals", this.form).then(() => {
+          console.log("deal posted")
+          this.formError = false;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      }
+      else{
+        this.formError = true;
+      }
     }
   }
 }

@@ -9,7 +9,7 @@
 
         <div class="col-md-7">
           <div class="card-body">
-            <h5 class="card-title"> {{ this.dealInfo.temperature }} </h5>
+            <h5 class="card-title"> {{ this.dealInfo.temperature }} ° C</h5>
             <h3 class="card-text">{{this.dealInfo.titre}}</h3>
             <p class="card-text"> Code promo : {{ this.dealInfo.promoCode }}</p>
             <p class="card-text"> Remise : {{ this.dealInfo.priceOld }} € -> {{ this.dealInfo.priceNew}} €</p>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="col-md-3">
-          <p class="card-text"> {{this.$route.params.dateCreation}} </p>
+          <p class="card-text"> {{this.dealInfo.date}} </p>
           <div class="card-text"> <a target="_blank" class="btn btn-dark" :href="this.dealInfo.shopLink"> Voir </a></div>
         </div>
 

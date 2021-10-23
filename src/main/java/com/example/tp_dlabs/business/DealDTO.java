@@ -8,7 +8,7 @@ public class DealDTO {
     private String titre;
     private String creator;
     private String shopName;
-    private Calendar dateCreation;
+    private Calendar date;
     private String imgUrl;
     private String shopLink;
     private String description;
@@ -22,7 +22,7 @@ public class DealDTO {
         this.titre = titre;
         this.creator = creator;
         this.shopName = shopName;
-        this.dateCreation = dateCreation;
+        this.date = dateCreation;
         this.imgUrl = imgUrl;
         this.shopLink = shopLink;
         this.description = description;
@@ -71,12 +71,12 @@ public class DealDTO {
         this.shopName = shopName;
     }
 
-    public Calendar getDateCreation() {
-        return dateCreation;
+    public Calendar getDate() {
+        return date;
     }
 
-    public void setDateCreation(Calendar dateCreation) {
-        this.dateCreation = dateCreation;
+    public void setDate(Calendar date) {
+        this.date = date;
     }
 
     public String getImgUrl() {
