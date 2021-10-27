@@ -10,7 +10,7 @@
         <div class="col-md-7">
           <div class="card-body">
             <h5 class="card-title"> {{ this.dealInfo.temperature }} ° C</h5>
-            <h3 class="card-text">{{this.dealInfo.titre}}</h3>
+            <h3 class="card-text">{{this.dealInfo.title}}</h3>
             <p class="card-text"> Code promo : {{ this.dealInfo.promoCode }}</p>
             <p class="card-text"> Remise : {{ this.dealInfo.priceOld }} € -> {{ this.dealInfo.priceNew}} €</p>
             <p class="card-text"> Description : {{ this.dealInfo.description }}</p>

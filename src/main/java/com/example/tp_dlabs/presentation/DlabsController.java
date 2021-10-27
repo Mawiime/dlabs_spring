@@ -3,13 +3,11 @@ package com.example.tp_dlabs.presentation;
 import com.example.tp_dlabs.business.DealBO;
 import com.example.tp_dlabs.business.DealDTO;
 import com.example.tp_dlabs.business.HomeDTO;
-import com.example.tp_dlabs.persistence.DealDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins="http://localhost:3000")
 @RequestMapping(value = "/deals")
 public class DlabsController {
 
@@ -30,7 +28,7 @@ public class DlabsController {
 
     @RequestMapping(method = RequestMethod.POST)
     @Transactional
-    public void create(@RequestBody DealDO dealDO){
-        dealBO.createOne(dealDO);
+    public void create(@RequestBody DealDTO dealDTO){
+        dealBO.createOne(dealDTO);
     }
 }

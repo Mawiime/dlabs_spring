@@ -10,7 +10,7 @@
         <div class="col-md-7">
           <div class="card-body">
               <h5 class="card-title"> {{deal.temperature}} °C</h5>
-              <h3 class="card-text"> {{deal.titre}} </h3>
+              <h3 class="card-text"> {{deal.title}} </h3>
             </div>
         </div>
 

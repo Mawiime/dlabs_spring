@@ -2,6 +2,7 @@ package com.example.tp_dlabs.business;
 
 import com.example.tp_dlabs.persistence.DealDAO;
 import com.example.tp_dlabs.persistence.DealDO;
+import com.example.tp_dlabs.persistence.DealMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,21 +22,20 @@ public class DealBO {
     public List<DealDTO> retrieveAll(){
         List<DealDO> deals = dealDAO.findAll();
 
-        List<DealDTO> dtos = new LinkedList<>();
+        final List<DealDTO> dtos = new LinkedList<>();
 
-        for(DealDO deal : deals){
-            dtos.add(new DealDTO(deal.getId(), deal.getTemperature(), deal.getTitle(), deal.getCreator(), deal.getShopName(), deal.getDate(), deal.getImgUrl(), deal.getShopLink(), deal.getDescription(), deal.getPromoCode(), deal.getPriceOld(), deal.getPriceNew()));
+        for(final DealDO deal : deals){
+            dtos.add(DealMapper.map(deal));
         }
 
         return dtos;
     }
 
     public DealDTO retrieveOne(int id){
-        DealDO deal = dealDAO.findOne(id);
-        return new DealDTO(deal.getId(), deal.getTemperature(), deal.getTitle(), deal.getCreator(), deal.getShopName(), deal.getDate(), deal.getImgUrl(), deal.getShopLink(), deal.getDescription(), deal.getPromoCode(), deal.getPriceOld(), deal.getPriceNew());
+        return DealMapper.map(dealDAO.findOne(id));
     }
 
-    public void createOne(DealDO deaLDO){
-        dealDAO.save(deaLDO);
+    public void createOne(DealDTO dealDTO){
+        dealDAO.save(DealMapper.map(dealDTO));
     }
 }

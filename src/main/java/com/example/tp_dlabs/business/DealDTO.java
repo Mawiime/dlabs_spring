@@ -5,7 +5,7 @@ import java.util.Calendar;
 public class DealDTO {
     private int id;
     private int temperature;
-    private String titre;
+    private String title;
     private String creator;
     private String shopName;
     private Calendar date;
@@ -15,21 +15,6 @@ public class DealDTO {
     private String promoCode;
     private long priceOld;
     private long priceNew;
-
-    public DealDTO(int id, int temperature, String titre, String creator, String shopName, Calendar dateCreation, String imgUrl, String shopLink, String description, String promoCode, long priceOld, long priceNew) {
-        this.id = id;
-        this.temperature = temperature;
-        this.titre = titre;
-        this.creator = creator;
-        this.shopName = shopName;
-        this.date = dateCreation;
-        this.imgUrl = imgUrl;
-        this.shopLink = shopLink;
-        this.description = description;
-        this.promoCode = promoCode;
-        this.priceOld = priceOld;
-        this.priceNew = priceNew;
-    }
 
     public int getId() {
         return id;
@@ -47,12 +32,12 @@ public class DealDTO {
         this.temperature = temperature;
     }
 
-    public String getTitre() {
-        return titre;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitre(String titre) {
-        this.titre = titre;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getCreator() {
