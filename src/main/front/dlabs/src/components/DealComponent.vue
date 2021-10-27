@@ -19,6 +19,7 @@
 
         <div class="col-md-3">
           <p class="card-text"> {{this.dealInfo.date}} </p>
+          <p class="card-text"> {{this.dealInfo.creator}}</p>
           <div class="card-text"> <a target="_blank" class="btn btn-dark" :href="this.dealInfo.shopLink"> Voir </a></div>
         </div>
 

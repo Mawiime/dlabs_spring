@@ -1,5 +1,6 @@
-package com.example.tp_dlabs.persistence;
+package com.example.tp_dlabs.persistence.DAO;
 
+import com.example.tp_dlabs.persistence.DO.DealDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

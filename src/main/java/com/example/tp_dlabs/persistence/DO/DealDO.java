@@ -1,7 +1,8 @@
-package com.example.tp_dlabs.persistence;
+package com.example.tp_dlabs.persistence.DO;
 
 import javax.persistence.*;
 import java.util.Calendar;
+import java.util.List;
 
 @Entity
 @Table(name="TBL_DEAL")
@@ -29,12 +30,6 @@ public class DealDO {
     @Column(name="promo_code")
     private String promoCode;
 
-    @Column(name="temperature")
-    private Integer temperature;
-
-    @Column(name="creator")
-    private String creator;
-
     @Column(name="date")
     private Calendar date;
 
@@ -44,7 +39,14 @@ public class DealDO {
     @Column(name="description")
     private String description;
 
-    public DealDO(Integer id, String title, String shopName, String shopLink, long priceOld, long priceNew, String promoCode, Integer temperature, String creator, Calendar date, String imgUrl, String description) {
+    @ManyToOne
+    @JoinColumn(name = "fk_creator")
+    private UserDO creator;
+
+    @OneToMany(mappedBy = "deal")
+    private List<TemperatureDO> temperatureDOList;
+
+    public DealDO(Integer id, String title, String shopName, String shopLink, long priceOld, long priceNew, String promoCode, Calendar date, String imgUrl, String description, UserDO creator) {
         this.id = id;
         this.title = title;
         this.shopName = shopName;
@@ -52,11 +54,10 @@ public class DealDO {
         this.priceOld = priceOld;
         this.priceNew = priceNew;
         this.promoCode = promoCode;
-        this.temperature = temperature;
-        this.creator = creator;
         this.date = date;
         this.imgUrl = imgUrl;
         this.description = description;
+        this.creator = creator;
     }
 
     public DealDO() {
@@ -119,19 +120,11 @@ public class DealDO {
         this.promoCode = promoCode;
     }
 
-    public Integer getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(Integer temperature) {
-        this.temperature = temperature;
-    }
-
-    public String getCreator() {
+    public UserDO getCreator() {
         return creator;
     }
 
-    public void setCreator(String creator) {
+    public void setCreator(UserDO creator) {
         this.creator = creator;
     }
 
@@ -157,5 +150,13 @@ public class DealDO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<TemperatureDO> getTemperatureDOList() {
+        return temperatureDOList;
+    }
+
+    public void setTemperatureDOList(List<TemperatureDO> temperatureDOList) {
+        this.temperatureDOList = temperatureDOList;
     }
 }

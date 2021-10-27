@@ -42,8 +42,6 @@ export default {
         shopLink : null,
         promoCode : null,
         imgUrl : null,
-        temperature : '0',
-        creator : 'temp_creator',
         date : new Date()
       }
     }

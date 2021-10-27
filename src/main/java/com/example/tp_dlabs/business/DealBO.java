@@ -1,8 +1,8 @@
 package com.example.tp_dlabs.business;
 
-import com.example.tp_dlabs.persistence.DealDAO;
-import com.example.tp_dlabs.persistence.DealDO;
-import com.example.tp_dlabs.persistence.DealMapper;
+import com.example.tp_dlabs.persistence.DAO.DealDAO;
+import com.example.tp_dlabs.persistence.DO.DealDO;
+import com.example.tp_dlabs.persistence.mappers.DealMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

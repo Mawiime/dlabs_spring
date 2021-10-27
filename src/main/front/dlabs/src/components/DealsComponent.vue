@@ -15,7 +15,8 @@
         </div>
 
         <div class="col-md-3">
-           <p class="card-text"> {{deal.date}} </p>
+           <p class="card-text"> {{ new Date(deal.date).toLocaleDateString() }} </p>
+           <p class="card-text">{{deal.creator}}</p>
            <div class="card-text"> <a target="_blank" class="btn btn-dark" :href="deal.shopLink"> Voir </a></div>
         </div>
 
