@@ -39,8 +39,7 @@ public class DlabsAuthenticationProvider implements AuthenticationProvider {
 		final String password = authentication.getCredentials().toString();
 
 		final UserDO utilisateurEntity = repo.findUserWithName(userName);
-		// TODO : Décommentez passwordBO.matches si le mot de passe est crypté.
-		if (utilisateurEntity != null /*&& passwordBO.matches(password, utilisateurEntity.getPassword())*/) {
+		if (utilisateurEntity != null && passwordBO.matches(password, utilisateurEntity.getPassword())) {
 
 			// Création d'un bean perso pour ajouter des valeurs.
 			final List<GrantedAuthority> grantedAuths = new ArrayList<>();
