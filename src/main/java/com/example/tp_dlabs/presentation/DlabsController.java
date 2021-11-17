@@ -8,25 +8,24 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/deals")
 public class DlabsController {
 
     @Autowired
     private DealBO dealBO;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET, value="/public/deals")
     public HomeDTO getAll(){
         final HomeDTO homeDTO = new HomeDTO(dealBO.retrieveAll());
 
         return homeDTO;
     }
 
-    @RequestMapping(value="/{id}", method = RequestMethod.GET)
+    @RequestMapping(value="/public/deals/{id}", method = RequestMethod.GET)
     public DealDTO getOne(@PathVariable int id){
         return dealBO.retrieveOne(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, value="/deals")
     @Transactional
     public void create(@RequestBody DealDTO dealDTO){
         dealBO.createOne(dealDTO);

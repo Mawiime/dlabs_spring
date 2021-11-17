@@ -39,7 +39,7 @@ export default {
     }
   },
   created(){
-    axios.get("http://localhost:8080/deals/" + this.$route.params.id).then(response => {
+    axios.get("http://localhost:8080/public/deals/" + this.$route.params.id).then(response => {
       this.dealInfo = response.data;
     });
   }

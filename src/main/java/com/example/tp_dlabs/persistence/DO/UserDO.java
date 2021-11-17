@@ -87,4 +87,5 @@ public class UserDO {
     public void setTemperatureDOList(List<TemperatureDO> temperatureDOList) {
         this.temperatureDOList = temperatureDOList;
     }
+
 }

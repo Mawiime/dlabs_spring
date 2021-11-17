@@ -20,6 +20,16 @@ const routes = [
     path: '/postDeal',
     name: 'PostDeal',
     component: () => import('../views/PostDealView.vue')
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/LoginView.vue')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('../views/RegisterView.vue')
   }
 ]
 

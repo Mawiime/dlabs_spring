@@ -50,7 +50,6 @@ export default {
     sendDeal(){
       if(this.form.title && this.form.description && this.form.priceOld && this.form.priceNew && this.form.shopName && this.form.shopLink && this.form.promoCode && this.form.imgUrl){
         axios.post("http://localhost:8080/deals", this.form).then(() => {
-          console.log("deal posted" + this.form.title)
           this.formError = false;
         })
         .catch((error) => {

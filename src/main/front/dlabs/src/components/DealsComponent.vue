@@ -41,7 +41,7 @@ export default {
     }
   },
   created(){
-    axios.get("http://localhost:8080/deals").then(response => {
+    axios.get("http://localhost:8080/public/deals").then(response => {
       this.listDeals = response.data.deals;
     });
   }

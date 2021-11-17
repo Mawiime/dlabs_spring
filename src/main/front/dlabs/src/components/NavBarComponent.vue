@@ -9,6 +9,12 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/postDeal">Poster un nouveau deal</router-link>
         </li>
+        <li>
+          <router-link class="nav-link" to="/login">Se connecter</router-link>
+        </li>
+        <li>
+          <router-link class="nav-link" to="/register">S'inscrire</router-link>
+        </li>
       </ul>
     </div>
   </nav>
