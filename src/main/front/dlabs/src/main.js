@@ -4,6 +4,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import router from './router'
 import axios from "axios";
+import store from './store'
 
 axios.interceptors.request.use(async function (config){
     if(!config.url.includes('public')){
@@ -15,4 +16,4 @@ axios.interceptors.request.use(async function (config){
     return Promise.reject(error);
 });
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(store).use(router).mount('#app')

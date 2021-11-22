@@ -2,7 +2,6 @@
   <div class="deals">
     <div class="card mb-3" style="max-width: 80%" v-for="deal in listDeals" :key="deal.id" v-on:click="navigate(deal.id)">
       <div class="row g-0">
-
         <div class="col-md-2">
           <img :src="deal.imgUrl" class="img-fluid"/>
         </div>
