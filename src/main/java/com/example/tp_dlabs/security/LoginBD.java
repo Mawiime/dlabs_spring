@@ -12,18 +12,13 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author MDE
  *
  */
- // TODO : A decommenter quand le code compilera
 @RestController
-@RequestMapping(value = "/public/bd/login")
 @Transactional
 public class LoginBD {
 
@@ -32,7 +27,7 @@ public class LoginBD {
 	@Autowired
 	private AuthenticationProvider authenticationManager;
 
-	@RequestMapping(method = RequestMethod.POST)
+	@PostMapping(path="/public/bd/login")
 	public UtilisateurDTO login(@RequestBody final LoginRequestDTO request, final HttpServletRequest req) {
 
 		// Controle des params obligatoires

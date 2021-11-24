@@ -3,8 +3,8 @@ package com.example.tp_dlabs.security;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.tp_dlabs.persistence.DAO.UserDAO;
-import com.example.tp_dlabs.persistence.DO.UserDO;
+import com.example.tp_dlabs.persistence.daos.UserDAO;
+import com.example.tp_dlabs.persistence.dos.UserDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;

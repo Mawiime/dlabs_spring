@@ -9,15 +9,21 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/postDeal">Poster un nouveau deal</router-link>
         </li>
-        <li v-if="this.$store.state.role=='disconnected'">
+        <li v-if="this.$store.state.role==='disconnected'">
           <router-link class="nav-link" to="/login">Se connecter</router-link>
         </li>
-        <li v-if="this.$store.state.role=='disconnected'">
+        <li v-if="this.$store.state.role==='disconnected'">
           <router-link class="nav-link" to="/register">S'inscrire</router-link>
+        </li>
+        <li v-if="this.$store.state.role==='connected'" class="nav-item">
+          <div class="navbar-text"> Bonjour {{ this.$store.state.pseudo }} </div>
+        </li>
+        <li v-if="this.$store.state.role==='connected'" class="nav-item">
+          <div class="navbar-text"> Se déconnecter </div>
         </li>
       </ul>
 
-      <span v-if="this.$store.state.role=='connected'" class="navbar-text"> Bonjour User </span>
+
     </div>
   </nav>
 </template>

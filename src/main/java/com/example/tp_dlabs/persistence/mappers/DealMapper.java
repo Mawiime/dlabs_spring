@@ -1,9 +1,9 @@
 package com.example.tp_dlabs.persistence.mappers;
 
 import com.example.tp_dlabs.business.DealDTO;
-import com.example.tp_dlabs.persistence.DO.DealDO;
-import com.example.tp_dlabs.persistence.DO.TemperatureDO;
-import com.example.tp_dlabs.persistence.DO.UserDO;
+import com.example.tp_dlabs.persistence.dos.DealDO;
+import com.example.tp_dlabs.persistence.dos.TemperatureDO;
+import com.example.tp_dlabs.persistence.dos.UserDO;
 
 public class DealMapper {
 

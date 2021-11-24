@@ -1,6 +1,4 @@
-package com.example.tp_dlabs.persistence.DO;
-
-import com.example.tp_dlabs.persistence.DO.TemperatureDO;
+package com.example.tp_dlabs.persistence.dos;
 
 import javax.persistence.*;
 import java.util.List;

@@ -53,6 +53,7 @@ export default {
 
       axios.post('http://localhost:8080/public/bd/login', LoginRequestDTO).then(() => {
         localStorage.setItem('auth', btoa(LoginRequestDTO.identifier + ":" + LoginRequestDTO.password));
+        this.$store.state.pseudo = this.form.identifier;
         this.$store.dispatch("toggle_connected");
         this.$router.push({name : "Deals"});
       }, () => {

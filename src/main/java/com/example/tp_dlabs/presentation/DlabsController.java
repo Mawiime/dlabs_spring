@@ -13,19 +13,17 @@ public class DlabsController {
     @Autowired
     private DealBO dealBO;
 
-    @RequestMapping(method = RequestMethod.GET, value="/public/deals")
+    @GetMapping(path="/public/deals")
     public HomeDTO getAll(){
-        final HomeDTO homeDTO = new HomeDTO(dealBO.retrieveAll());
-
-        return homeDTO;
+        return new HomeDTO(dealBO.retrieveAll());
     }
 
-    @RequestMapping(value="/public/deals/{id}", method = RequestMethod.GET)
+    @GetMapping(path="/public/deals/{id")
     public DealDTO getOne(@PathVariable int id){
         return dealBO.retrieveOne(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, value="/deals")
+    @PostMapping(path="/deals")
     @Transactional
     public void create(@RequestBody DealDTO dealDTO){
         dealBO.createOne(dealDTO);

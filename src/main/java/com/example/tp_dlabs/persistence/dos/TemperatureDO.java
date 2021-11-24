@@ -1,4 +1,4 @@
-package com.example.tp_dlabs.persistence.DO;
+package com.example.tp_dlabs.persistence.dos;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
-package com.example.tp_dlabs.persistence.DAO;
+package com.example.tp_dlabs.persistence.daos;
 
-import com.example.tp_dlabs.persistence.DO.UserDO;
+import com.example.tp_dlabs.persistence.dos.UserDO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
